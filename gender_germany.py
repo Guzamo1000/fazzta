@@ -1,46 +1,66 @@
-import asyncio
-import aiohttp
+import concurrent.futures
+import requests
 from bs4 import BeautifulSoup
-import mysql.connector
-import pandas as pd
-async def fetch(session, url):
-    async with session.get(url) as response:
-        return await response.text()
+import pymysql
 
-async def process_noun(session, noun, gender_ls):
-    async with session.get(f"https://der-artikel.de/die/{noun}.html") as response:
-        if response.status == 404:
-            async with session.get(f"https://der-artikel.de/der/{noun}.html") as response:
-                if response.status == 404:
-                    print(f"{noun} does not exist")
-                    return
-        html = await response.text()
-        soup = BeautifulSoup(html, 'html.parser')
-        gender = soup.find("h3", class_="mb-5")
-        if gender is not None:
-            gender_label = gender.text.split(",")
-            gender_ls[noun] = gender_label[1]
-            print(f"success {gender_label[1]}")
-        else:
-            print(f"{noun} does not exist")
+# Hàm crawl và cập nhật gender sử dụng threading
+def crawl_and_update_gender_threading():
+    # Kết nối cơ sở dữ liệu
+    conn = pymysql.connect(host='localhost', user='root', password='258000', database='fazzta')
+    cursor = conn.cursor()
 
-async def main(nouns):
-    async with aiohttp.ClientSession() as session:
-        tasks = []
-        gender_ls = {}
-        for noun in nouns:
-            task = asyncio.ensure_future(process_noun(session, noun, gender_ls))
-            tasks.append(task)
-        await asyncio.gather(*tasks)
-    return gender_ls
+    # Truy vấn các danh từ trong bảng nomen
+    query = "SELECT id, form, lemma FROM nomen"
+    cursor.execute(query)
+    results = cursor.fetchall()
 
-if __name__ == "__main__":
-    cnx = mysql.connector.connect(user='root', password='258000',
-                              host='localhost',
-                              database='fazzta')
-    df=pd.read_sql("select * from nomen", cnx)
-    nouns = df['form']
-    loop = asyncio.get_event_loop()
-    gender_ls = loop.run_until_complete(main(nouns))
-    loop.close()
-    print(gender_ls)
+    # Tạo một danh sách các URL cần crawl
+    urls = []
+    for result in results:
+        url = result[1]
+        urls.append((result[0], url))  # Lưu id và URL tương ứng
+
+    # Hàm crawl một URL và trả về giới tính
+    def crawl_url(url):
+        
+        print(f"Noun: {url}")
+        response=requests.get("https://der-artikel.de/die/"+str(url)+".html")
+        if response.status_code==404:
+            response=requests.get("https://der-artikel.de/der/"+str(url)+".html")
+            if response.status_code==404: 
+                print("does not exist")
+                return
+
+        html=response.content
+        soup=BeautifulSoup(html, "html.parser")
+        h=soup.find("h3", class_="mb-5")
+        gender_label=h.find("em").text.split(",")
+            # gender_label=gender.text.split(",")
+            # print
+        print(f"*success: {gender_label[1]}")
+        return gender_label[1]
+            
+
+    # Hàm cập nhật giới tính của một danh từ vào cơ sở dữ liệu
+    def update_gender(noun_id, gender):
+        query = f"UPDATE nomen SET gender = '{gender}' WHERE id = {noun_id}"
+        cursor.execute(query)
+        conn.commit()
+
+    # Sử dụng ThreadPoolExecutor để tải dữ liệu từ các URL và cập nhật cơ sở dữ liệu
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        # Gửi các nhiệm vụ đến bộ xử lý đa nhiệm
+        futures = [executor.submit(crawl_url, url) for id, url in urls]
+        
+        # Lấy kết quả và cập nhật cơ sở dữ liệu
+        for i, future in enumerate(concurrent.futures.as_completed(futures)):
+            gender = future.result()
+            noun_id = urls[i][0]
+            update_gender(noun_id, gender)
+
+    # Đóng kết nối cơ sở dữ liệu
+    cursor.close()
+    conn.close()
+
+
+crawl_and_update_gender_threading()

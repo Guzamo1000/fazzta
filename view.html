@@ -6,12 +6,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
     <meta
-        content="Der, die oder das Mitbürgerin? Richtig ist die Mitbürgerin (feminin). Hier finden Sie Artikeltraining und Übungen zu Wortschatz und Grammatik!"
+        content="Der, die oder das Mann? Artikel und Deklinationen lernen, Deutsch verbessern. Hier finden Sie Artikeltraining und Übungen zu Wortschatz und Grammatik!"
         name="description" />
     <meta content="AH" name="author" />
-    <title>Der, die oder das Mitbürgerin? Welcher Artikel?</title>
-    <link href="../img/favicon-die.ico" id="favicon" rel="icon" type="image/png" />
-    <link href="https://der-artikel.de/die/Mitbürgerin.html" rel="canonical" />
+    <title>Der, die oder das Mann? Welcher Artikel?</title>
+    <link href="../img/favicon-der.ico" id="favicon" rel="icon" type="image/png" />
+    <link href="https://der-artikel.de/der/Mann.html" rel="canonical" />
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
@@ -44,9 +44,11 @@
     <!-- Header -->
     <header class="masthead d-flex">
         <div class="container text-center my-auto">
-            <h1 class="mb-1"><span style="color:red;">die</span> Mitbürgerin </h1>
+            <h1 class="mb-1"><span style="color:red;">der</span> Mann  <i class="icon-volume-2" id="playBtn"
+                    onclick="playAudio('mann')" style="font-size:80%;"></i></h1>
             <h3 class="mb-5">
-                <em>Substantiv, feminin</em>
+                <em>Substantiv, maskulin</em>
+                <br /><span style="margin-top:40px;font-size:70%;color:#444;"><i>engl.</i> man</span>
             </h3>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">zur Deklinationstabelle</a>
             <p style="margin-top:50px;"></p>
@@ -83,28 +85,28 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td onclick="showModal('nomdie')" style="color:#e68a00;text-align:left;">
+                                        <td onclick="showModal('nomder')" style="color:#e68a00;text-align:left;">
                                             NOMINATIV</td>
-                                        <td style="text-align: center;"><i>die</i> Mitbürgerin</td>
-                                        <td style="text-align: center;"><i>die</i> Mitbürgerinnen</td>
+                                        <td style="text-align: center;"><i>der</i> Mann</td>
+                                        <td style="text-align: center;"><i>die</i> Männer</td>
                                     </tr>
                                     <tr>
-                                        <td onclick="showModal('gendie')" style="color:#e68a00;text-align:left;">GENITIV
+                                        <td onclick="showModal('gender')" style="color:#e68a00;text-align:left;">GENITIV
                                         </td>
-                                        <td style="text-align: center;"><i>der</i> Mitbürgerin</td>
-                                        <td style="text-align: center;"><i>der</i> Mitbürgerinnen</td>
+                                        <td style="text-align: center;"><i>des</i> Manns / Mannes</td>
+                                        <td style="text-align: center;"><i>der</i> Männer</td>
                                     </tr>
                                     <tr>
-                                        <td onclick="showModal('datdie')" style="color:#e68a00;text-align:left;">DATIV
+                                        <td onclick="showModal('datder')" style="color:#e68a00;text-align:left;">DATIV
                                         </td>
-                                        <td><i>der</i> Mitbürgerin</td>
-                                        <td style="text-align: center;"><i>den</i> Mitbürgerinnen</td>
+                                        <td><i>dem</i> Mann(e)</td>
+                                        <td style="text-align: center;"><i>den</i> Männern</td>
                                     </tr>
                                     <tr>
-                                        <td onclick="showModal('akkdie')" style="color:#e68a00;text-align:left;">
+                                        <td onclick="showModal('akkder')" style="color:#e68a00;text-align:left;">
                                             AKKUSATIV</td>
-                                        <td><i>die</i> Mitbürgerin</td>
-                                        <td style="text-align: center;"><i>die</i> Mitbürgerinnen</td>
+                                        <td><i>den</i> Mann</td>
+                                        <td style="text-align: center;"><i>die</i> Männer</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -181,15 +183,6 @@
             </div>
         </div>
     </section>
-    <!-- Silben -->
-    <section class="content-section" style="background: #eab676;">
-        <div class="container">
-            <div class="content-section-heading text-center">
-                <h2>Worttrennung</h2>
-                <p style="letter-spacing: 1px; font-size: 1.3rem;">Mit|bür|ge|rin</p>
-            </div>
-        </div>
-    </section>
     <!-- Word cloud -->
     <script src="../js/jquery-1.9.0.min.js"></script>
     <script src="../vendor/jqcloud2/dist/jqcloud.min.js"></script>
@@ -206,36 +199,36 @@
     </section>
     <script>
         var words = [
-            { text: "Mitbürgerinnen", weight: 0.097783424 },
-            { text: "Mitbürger", weight: 0.100549534 },
-            { text: "Bürgerin", weight: 0.06912613 },
-            { text: "Bürgerinnen", weight: 0.06765012 },
-            { text: "Migrantinnen", weight: 0.10519642 },
-            { text: "Wählerin", weight: 0.08038293 },
-            { text: "Mitbürgern", weight: 0.112424575 },
-            { text: "ausländischen", weight: 0.07718899 },
-            { text: "Ausländerinnen", weight: 0.13449305 },
-            { text: "ausländische", weight: 0.06366103 },
-            { text: "Migranten", weight: 0.049591314 },
-            { text: "Ausländern", weight: 0.07376557 },
-            { text: "MigrantInnen", weight: 0.092094116 },
-            { text: "Ausländer", weight: 0.13619891 },
-            { text: "Ausländische", weight: 0.051898506 },
-            { text: "Ausländerin", weight: 0.07308902 },
-            { text: "türkischstämmig", weight: -0.00931117 },
-            { text: "Soldatinnen", weight: 0.088049434 },
-            { text: "Leserin", weight: 0.28141576 },
-            { text: "langzeitarbeitslos", weight: 0.010748432 },
-            { text: "Arbeitnehmerin", weight: 0.057027794 },
-            { text: "Nichtdeutsche", weight: 0.08748478 },
-            { text: "Sozialhilfeempfängerin", weight: 0.07903055 },
-            { text: "Zuwanderer", weight: 0.063727416 },
-            { text: "ältere", weight: -0.059996463 },
-            { text: "EU-Bürgerin", weight: 0.10883012 },
-            { text: "Sozialhilfeempfänger", weight: 0.06595498 },
-            { text: "Migrant", weight: 0.041854534 },
-            { text: "ausländischer", weight: 0.011706459 },
-            { text: "Vorruheständler", weight: 0.08150365 },
+            { text: "Mädchen", weight: 0.022811245 },
+            { text: "Junge", weight: 0.013745116 },
+            { text: "Frau", weight: 0.056463704 },
+            { text: "Männer", weight: 0.07399934 },
+            { text: "Mutter", weight: -0.037012424 },
+            { text: "Leute", weight: 0.16894476 },
+            { text: "Bursche", weight: 0.008446511 },
+            { text: "Kind", weight: 0.04556129 },
+            { text: "Kerl", weight: 0.08728049 },
+            { text: "Männern", weight: 0.07835072 },
+            { text: "Mensch", weight: 0.13699059 },
+            { text: "Kamerad", weight: 0.05541741 },
+            { text: "Weib", weight: 0.023219554 },
+            { text: "Vater", weight: -0.08482659 },
+            { text: "Knabe", weight: -0.015264632 },
+            { text: "Polizist", weight: 0.04622096 },
+            { text: "Paar", weight: -5.6108064E-4 },
+            { text: "Familienvater", weight: -0.026237698 },
+            { text: "Jüngling", weight: 0.010276132 },
+            { text: "Schwester", weight: -0.06381174 },
+            { text: "Gatte", weight: -0.0070166257 },
+            { text: "Soldat", weight: 0.057769936 },
+            { text: "Greisin", weight: -0.0049596517 },
+            { text: "Ehemann", weight: -0.033801515 },
+            { text: "Hund", weight: 0.07229022 },
+            { text: "Bruder", weight: -0.10098532 },
+            { text: "Kumpel", weight: 0.08278135 },
+            { text: "Matrose", weight: 0.016663468 },
+            { text: "Halbwüchsige", weight: 0.011141856 },
+            { text: "Krieger", weight: 0.022000933 },
         ];
         $('#demo').jQCloud(words, {
             autoResize: true
@@ -244,9 +237,9 @@
     <!-- Call to Action -->
     <section class="content-section bg-primary text-white">
         <div class="container text-center">
-            <h2 class="mb-4">Im Alphabet blättern</h2> <a class="btn btn-xl btn-light mr-4" href="../der/Mitbürger.html"
-                style="margin-bottom:10px;"><i class="icon-action-undo" style="margin-right:7px;"></i> Mitbürger</a> <a
-                class="btn btn-xl btn-dark" href="../das/Miteinander.html" style="margin-bottom:10px;">Miteinander <i
+            <h2 class="mb-4">Im Alphabet blättern</h2> <a class="btn btn-xl btn-light mr-4" href="../das/Manko.html"
+                style="margin-bottom:10px;"><i class="icon-action-undo" style="margin-right:7px;"></i> Manko</a> <a
+                class="btn btn-xl btn-dark" href="../das/Manna.html" style="margin-bottom:10px;">Manna <i
                     class="icon-action-redo" style="margin-left:7px;"></i></a>
         </div>
     </section>
