@@ -29,8 +29,10 @@ def crawl_and_update_gender_threading():
         if response.status_code==404:
             response=requests.get("https://der-artikel.de/der/"+str(url)+".html")
             if response.status_code==404: 
-                print("does not exist")
-                return
+                response=requests.get("https://der-artikel.de/das/"+str(url)+".html")
+                if response.status_code==404:
+                    print("does not exist")
+                    return
 
         html=response.content
         soup=BeautifulSoup(html, "html.parser")
