@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta
+        content="Der, die oder das Mitbürgerin? Richtig ist die Mitbürgerin (feminin). Hier finden Sie Artikeltraining und Übungen zu Wortschatz und Grammatik!"
+        name="description" />
+    <meta content="AH" name="author" />
+    <title>Der, die oder das Mitbürgerin? Welcher Artikel?</title>
+    <link href="../img/favicon-die.ico" id="favicon" rel="icon" type="image/png" />
+    <link href="https://der-artikel.de/die/Mitbürgerin.html" rel="canonical" />
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <link href="../css/stylish-portfolio.min.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="../index.html">Artikel</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="../nullartikel.html">Nullartikel</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="../deklinationen.html">Deklination</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="../wortschatz.html">Wortschatz</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="../artikeltraining.html">Artikeltraining</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1"><span style="color:red;">die</span> Mitbürgerin </h1>
+            <h3 class="mb-5">
+                <em>Substantiv, feminin</em>
+            </h3>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">zur Deklinationstabelle</a>
+            <p style="margin-top:50px;"></p>
+            <div class="container text-center my-auto">
+                <div class="form-inline d-flex justify-content-center">
+                    <input autofocus="" class="form-control" id="word" placeholder="Wortsuche"
+                        style="background: rgba(255, 255, 255, 0.3);border:none;max-width:200px;" type="text" />
+                    <button class="btn btn-default" id="search-btn" onclick="search();" style="border:1px solid #888;"
+                        type="button"> <i class="icon-magnifier"></i> </button>
+                </div>
+                <p id="result" style="color:#006080;font-size:95%;margin-top:5px;"></p>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <!-- About -->
+    <section class="content-section bg-light" id="about">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2>Was ist Deklination?</h2>
+                    <p class="lead mb-5">Die Deklination beschreibt die Regeln, nach denen bestimmte Wortarten
+                        (Substantive, Pronomen und Adjektive) nach Fall (Kasus), Zahl (Numerus) und Geschlecht (Genus)
+                        ihre Form verändern.</p>
+                    <div class="container" style="max-width:500px; margin-bottom:40px;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col" style="text-align:center;color:#1d809f;">SINGULAR</th>
+                                        <th scope="col" style="text-align:center;color:#1d809f;">PLURAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td onclick="showModal('nomdie')" style="color:#e68a00;text-align:left;">
+                                            NOMINATIV</td>
+                                        <td style="text-align: center;"><i>die</i> Mitbürgerin</td>
+                                        <td style="text-align: center;"><i>die</i> Mitbürgerinnen</td>
+                                    </tr>
+                                    <tr>
+                                        <td onclick="showModal('gendie')" style="color:#e68a00;text-align:left;">GENITIV
+                                        </td>
+                                        <td style="text-align: center;"><i>der</i> Mitbürgerin</td>
+                                        <td style="text-align: center;"><i>der</i> Mitbürgerinnen</td>
+                                    </tr>
+                                    <tr>
+                                        <td onclick="showModal('datdie')" style="color:#e68a00;text-align:left;">DATIV
+                                        </td>
+                                        <td><i>der</i> Mitbürgerin</td>
+                                        <td style="text-align: center;"><i>den</i> Mitbürgerinnen</td>
+                                    </tr>
+                                    <tr>
+                                        <td onclick="showModal('akkdie')" style="color:#e68a00;text-align:left;">
+                                            AKKUSATIV</td>
+                                        <td><i>die</i> Mitbürgerin</td>
+                                        <td style="text-align: center;"><i>die</i> Mitbürgerinnen</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Übungen</a>
+                </div>
+                <!-- The Modal view -->
+                <div class="modal" id="dekModal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6"><span class="close pull-right">×</span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"> </div>
+                            <div class="col-md-10" id="kasusText">
+                            </div>
+                            <div class="col-md-1"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">German Online Training</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-4">
+                        <a href="../artikeltraining.html" style="text-decoration: none;"
+                            title="Artikeltraining - Grammatik-Übung zur Artikelbestimmung"><i
+                                class="icon-pencil"></i></a>
+                    </span>
+                    <h4>
+                        <a href="../artikeltraining.html" style="text-decoration:none;color:white;"
+                            title="Artikeltraining - Grammatik-Übung zur Artikelbestimmung"><strong>Artikeltraining</strong></a>
+                    </h4>
+                    <p class="text-faded mb-0">Übungen zum Lernen der Artikel (Genus von Nomen/Substantiven)</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-4">
+                        <a href="../wortschatz.html" style="text-decoration: none;"
+                            title="Übungen zum Wortschatzaufbau von A1 bis A2"><i class="icon-layers"></i></a>
+                    </span>
+                    <h4>
+                        <a href="../wortschatz.html" style="text-decoration: none;color:white;"
+                            title="Übungen zum Wortschatzaufbau von A1 bis A2"><strong>Wortschatzaufbau</strong></a>
+                    </h4>
+                    <p class="text-faded mb-0">Übungen zum Wortschatzaufbau auf unterschiedlichen Sprachniveaus von A1
+                        bis A2</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-4">
+                        <a href="../deklinationen.html" style="text-decoration: none;"
+                            title="Deklination von Substantiven und Artikeln im Deutschen"><i
+                                class="icon-book-open"></i></a>
+                    </span>
+                    <h4>
+                        <a class="js-scroll-trigger" href="../deklinationen.html"
+                            style="text-decoration: none;color:white;"
+                            title="Deklination von Substantiven und Artikeln im Deutschen"><strong>Deklinationen</strong></a>
+                    </h4>
+                    <p class="text-faded mb-0">Allgemeine Grundlagen für die Deklination von Substantiven</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Silben -->
+    <section class="content-section" style="background: #eab676;">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h2>Worttrennung</h2>
+                <p style="letter-spacing: 1px; font-size: 1.3rem;">Mit|bür|ge|rin</p>
+            </div>
+        </div>
+    </section>
+    <!-- Word cloud -->
+    <script src="../js/jquery-1.9.0.min.js"></script>
+    <script src="../vendor/jqcloud2/dist/jqcloud.min.js"></script>
+    <link href="../vendor/jqcloud2/dist/jqcloud.min.css" rel="stylesheet" />
+    <!-- Cloud -->
+    <section class="content-section" id="cloud">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h2>Ähnliche Wörter</h2>
+            </div>
+            <div class="demo text-center" id="demo" style="width:100%;height:300px;">
+            </div>
+        </div>
+    </section>
+    <script>
+        var words = [
+            { text: "Mitbürgerinnen", weight: 0.097783424 },
+            { text: "Mitbürger", weight: 0.100549534 },
+            { text: "Bürgerin", weight: 0.06912613 },
+            { text: "Bürgerinnen", weight: 0.06765012 },
+            { text: "Migrantinnen", weight: 0.10519642 },
+            { text: "Wählerin", weight: 0.08038293 },
+            { text: "Mitbürgern", weight: 0.112424575 },
+            { text: "ausländischen", weight: 0.07718899 },
+            { text: "Ausländerinnen", weight: 0.13449305 },
+            { text: "ausländische", weight: 0.06366103 },
+            { text: "Migranten", weight: 0.049591314 },
+            { text: "Ausländern", weight: 0.07376557 },
+            { text: "MigrantInnen", weight: 0.092094116 },
+            { text: "Ausländer", weight: 0.13619891 },
+            { text: "Ausländische", weight: 0.051898506 },
+            { text: "Ausländerin", weight: 0.07308902 },
+            { text: "türkischstämmig", weight: -0.00931117 },
+            { text: "Soldatinnen", weight: 0.088049434 },
+            { text: "Leserin", weight: 0.28141576 },
+            { text: "langzeitarbeitslos", weight: 0.010748432 },
+            { text: "Arbeitnehmerin", weight: 0.057027794 },
+            { text: "Nichtdeutsche", weight: 0.08748478 },
+            { text: "Sozialhilfeempfängerin", weight: 0.07903055 },
+            { text: "Zuwanderer", weight: 0.063727416 },
+            { text: "ältere", weight: -0.059996463 },
+            { text: "EU-Bürgerin", weight: 0.10883012 },
+            { text: "Sozialhilfeempfänger", weight: 0.06595498 },
+            { text: "Migrant", weight: 0.041854534 },
+            { text: "ausländischer", weight: 0.011706459 },
+            { text: "Vorruheständler", weight: 0.08150365 },
+        ];
+        $('#demo').jQCloud(words, {
+            autoResize: true
+        });
+    </script>
+    <!-- Call to Action -->
+    <section class="content-section bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Im Alphabet blättern</h2> <a class="btn btn-xl btn-light mr-4" href="../der/Mitbürger.html"
+                style="margin-bottom:10px;"><i class="icon-action-undo" style="margin-right:7px;"></i> Mitbürger</a> <a
+                class="btn btn-xl btn-dark" href="../das/Miteinander.html" style="margin-bottom:10px;">Miteinander <i
+                    class="icon-action-redo" style="margin-left:7px;"></i></a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3"
+                        href="https://www.facebook.com/Der-Artikel-105294248661683" rel="nofollow">
+                        <i class="icon-social-facebook"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="https://twitter.com/ArtikelDer"
+                        rel="nofollow">
+                        <i class="icon-social-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="https://www.instagram.com/der_artikel"
+                        rel="nofollow">
+                        <i class="icon-social-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <a class="js-scroll-trigger" href="../impressum.html" rel="nofollow">Impressum</a> | <a
+                class="js-scroll-trigger" href="../datenschutz.html" rel="nofollow">Datenschutz</a><br /><br />
+            <p class="text-muted small mb-0">2023 © der-artikel.de</p>
+            <small class="block" style="color:#6c757d;">Interaktiv Deutsch lernen</small>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button--> <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <div id="cookiehint">
+        <div><span>Diese Seite verwendet Cookies, um unsere digitalen Angebote über Werbung zu finanzieren. Durch
+                Bestätigen stimmen Sie der Verwendung zu. </span>Mehr <a href="datenschutz.html">Informationen</a>.
+        </div>
+        <span id="cookiebtn" onclick="document.cookie = 'cookiehint=1;path=/';jQuery('#cookiehint').slideUp()">OK</span>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="../js/stylish-portfolio.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
