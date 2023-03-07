@@ -22,6 +22,7 @@ def crawl_and_update_gender_threading():
 
     # Hàm crawl một URL và trả về giới tính
     def crawl_url(url):
+        #url là danh từ cần tìm giới tính
         
         print(f"Noun: {url}")
         response=requests.get("https://der-artikel.de/die/"+str(url)+".html")
